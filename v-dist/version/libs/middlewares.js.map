@@ -1,0 +1,25 @@
+{
+  "version": 3,
+  "sources": [
+    "middlewares.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "app",
+    "set",
+    "use",
+    "json",
+    "auth",
+    "initialize",
+    "req",
+    "res",
+    "next"
+  ],
+  "mappings": ";;AAAA;;;;;;AAEAA,OAAOC,OAAP,GAAiB,eAAO;AACpB;AACAC,QAAIC,GAAJ,CAAQ,aAAR,EAAuB,CAAvB;;AAEA;AACAD,QAAIC,GAAJ,CAAQ,MAAR,EAAgB,IAAhB;;AAEA;AACAD,QAAIE,GAAJ,CAAQ,qBAAUC,IAAV,EAAR;;AAEA;AACAH,QAAIE,GAAJ,CAAQF,IAAII,IAAJ,CAASC,UAAT,EAAR;;AAEA;AACAL,QAAIE,GAAJ,CAAQ,UAACI,GAAD,EAAMC,GAAN,EAAWC,IAAX,EAAoB;AACzBD,YAAIN,GAAJ,CAAQ,EAAE,gBAAgB,iCAAlB,EAAR;AACD;AACAO;AACD,KAJD;AAKH,CAnBD",
+  "file": "middlewares.js",
+  "sourceRoot": "../../build/libs",
+  "sourcesContent": [
+    "import bodyParse from \"body-parser\";\n\nmodule.exports = app => {\n    /**Middleare de configuração do json a ser exibido como resposta tela */\n    app.set('json spaces', 4);\n\n    /**Middleare de configuração da porta que o node será iniciado*/\n    app.set('port', 3117);\n\n    /**Converte os atributos do boyd para json*/\n    app.use(bodyParse.json());\n\n    /**Inicia a auteneticação */\n    app.use(app.auth.initialize());\n    \n    /**Função genérica do app.all() que executa a delete do body.id*/\n    app.use((req, res, next) => {\n       res.set({ 'content-type': 'application/json; charset=utf-8' });\n      // delete req.body.id;\n      next();\n    });\n}\n"
+  ]
+}

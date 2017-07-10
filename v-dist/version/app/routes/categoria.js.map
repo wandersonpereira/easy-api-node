@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "categoria.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "utils",
+    "app",
+    "modules",
+    "route",
+    "all",
+    "auth",
+    "authenticate",
+    "get",
+    "req",
+    "res",
+    "Categorias",
+    "getModel",
+    "params",
+    "empresa",
+    "findAll",
+    "then",
+    "json",
+    "categorias",
+    "catch",
+    "status",
+    "msg",
+    "err",
+    "message",
+    "post",
+    "create",
+    "body",
+    "value",
+    "findOne",
+    "where",
+    "id",
+    "sendStatus",
+    "put",
+    "update",
+    "delete",
+    "destroy"
+  ],
+  "mappings": "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",
+  "file": "categoria.js",
+  "sourceRoot": "../../../build/app/routes",
+  "sourcesContent": [
+    "module.exports = app => {\n\n    const utils = app.app.modules.utils;\n\n    app.route('/categoria/:empresa')\n    .all(app.auth.authenticate())\n\n    .get((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Categorias = utils.getModel(req.params.empresa, 'categoria');\n\n      Categorias.findAll({})\n      .then(categorias => res.json({categorias}))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}));\n    })\n\n    .post((req, res) => {\n      const Categorias = utils.getModel(req.params.empresa, 'categoria');\n\n      Categorias.create(req.body)\n      .then(value => res.json(value))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}));\n    });\n\n    app.route('/categorias/:empresa/:id')\n    .all(app.auth.authenticate())\n\n    .get((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Categorias = utils.getModel(req.params.empresa, 'categoria');\n\n      Categorias.findOne({ where: { id: req.params.id } })\n      .then(value => {\n        if (value) return res.json(value);\n\n        //Caso não encontre valor, retorna 404 -> Registro não encontrado\n        return res.sendStatus(404);\n      })\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    })\n\n    .put((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Categorias = utils.getModel(req.params.empresa, 'categoria');\n\n      Categorias.update(req.body, {where: {id: req.params.id}})\n      //Retorna 204 Significa que foi executada com sucesso porém não retornou conteudo com resposta\n      .then(value => res.sendStatus(204))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    })\n\n    .delete((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Categorias = utils.getModel(req.params.empresa, 'categoria');\n\n      Categorias.destroy({where: {id: req.params.id}})\n      .then(value => res.sendStatus(204))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    });\n}\n"
+  ]
+}

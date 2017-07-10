@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "categoria_pouptempo.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "sequelize",
+    "DataType",
+    "categoria_poupotempo",
+    "define",
+    "id",
+    "type",
+    "BIGINT",
+    "primaryKey",
+    "autoIncremet",
+    "titulo",
+    "STRING",
+    "allowNull",
+    "validate",
+    "notEmpty",
+    "field",
+    "adicionarMenu",
+    "idCategoriaPai",
+    "classMethods",
+    "associate",
+    "models",
+    "freezeTableName",
+    "tableName"
+  ],
+  "mappings": ";;AAAA;;;;AAIAA,OAAOC,OAAP,GAAiB,UAACC,SAAD,EAAYC,QAAZ,EAAyB;AACtC,QAAMC,uBAAuBF,UAAUG,MAAV,CAAiB,qBAAjB,EAAwC;AAClEC,YAAK;AACAC,kBAAOJ,SAASK,MADhB;AAEAC,wBAAa,IAFb;AAGAC,0BAAe;AAHf,SAD6D;AAMjEC,gBAAS;AACLJ,kBAAOJ,SAASS,MADX;AAELC,uBAAY,KAFP;AAGLC,sBAAW;AACPC,0BAAW;AADJ,aAHN;AAMLC,mBAAO;AANF,SANwD;AAcjEC,uBAAe;AACXV,kBAAOJ,SAASS,MADL;AAEXI,mBAAO;AAFI,SAdkD;AAkBjEE,wBAAgB;AACZX,kBAAOJ,SAASK,MADJ;AAEZQ,mBAAO;AAFK;AAlBiD,KAAxC,EAsB1B;AACCG,sBAAe;AACXC,uBAAY,mBAACC,MAAD,EAAY;AACpB;AACH;AAHU,SADhB;AAMCC,yBAAiB,IANlB;AAOC;AACAC,mBAAW;AARZ,KAtB0B,CAA7B;;AAiCA,WAAOnB,oBAAP;AAEH,CApCD",
+  "file": "categoria_pouptempo.js",
+  "sourceRoot": "../../../../build/models/business/pouptempo",
+  "sourcesContent": [
+    "/**\n * Modulo que faz o controle das Tasks\n */\n\nmodule.exports = (sequelize, DataType) => {\n    const categoria_poupotempo = sequelize.define(\"categoria_pouptempo\", {\n       id : {\n            type : DataType.BIGINT,\n            primaryKey : true,\n            autoIncremet : true\n        },\n        titulo : {\n            type : DataType.STRING,\n            allowNull : false,\n            validate : {\n                notEmpty : true,\n            },\n            field: 'nome',\n        },\n        adicionarMenu: {\n            type : DataType.STRING,\n            field: 'adicionar_menu',\n        },\n        idCategoriaPai: {\n            type : DataType.BIGINT,\n            field: 'id_categoria_pai',\n        },\n    }, {\n        classMethods : {\n            associate : (models) => {\n                // Tasks.belongsTo(models.Users);\n            }\n        },\n        freezeTableName: true,\n        // define the table's name\n        tableName: 'categoria',\n    });\n\n    return categoria_poupotempo;\n\n}\n"
+  ]
+}

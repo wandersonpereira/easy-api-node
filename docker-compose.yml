@@ -1,0 +1,33 @@
+api-v2:
+ build: .
+ volumes:
+  - "./:/usr/src/app/"
+  - "./docker/srv:/srv/"
+ ports:
+  - "3117:3117"
+ links:
+  - api-v2-postgres
+  - api-v2-mysql
+api-v2-postgres:
+  image: azukiapp/postgres:9.4
+  environment:
+    - POSTGRES_USER:'postgres'
+    - POSTGRES_PASSWORD:'nabia123'
+    - POSTGRES_DB:'postgres'
+  ports:
+    - 5432:5432
+  volumes:
+    - ./docker/postgres:/data/db
+  container_name: api-v2-postgres
+api-v2-mysql:
+  image: mysql:5.6
+  ports:
+    - 3306:3306
+  volumes:
+    - ./docker/mysql:/var/lib/mysql
+  environment:
+    MYSQL_DATABASE: "dev_aplos1"
+    MYSQL_USER: "nabia"
+    MYSQL_PASSWORD: "nabia123"
+    MYSQL_ROOT_PASSWORD: "nabia123"
+  container_name: api-v2-mysql

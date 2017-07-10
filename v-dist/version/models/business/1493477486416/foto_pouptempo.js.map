@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "sources": [
+    "foto_pouptempo.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "sequelize",
+    "DataType",
+    "foto_poupotempo",
+    "define",
+    "id",
+    "type",
+    "BIGINT",
+    "primaryKey",
+    "autoIncremet",
+    "titulo",
+    "STRING",
+    "field",
+    "idAlbum",
+    "tipoImagem",
+    "imagem",
+    "orden",
+    "INTEGER",
+    "capaAlbum",
+    "classMethods",
+    "associate",
+    "models",
+    "freezeTableName",
+    "tableName",
+    "createdAt",
+    "updatedAt"
+  ],
+  "mappings": ";;AAAA;;;;AAIAA,OAAOC,OAAP,GAAiB,UAACC,SAAD,EAAYC,QAAZ,EAAyB;AACtC,QAAMC,kBAAkBF,UAAUG,MAAV,CAAiB,sBAAjB,EAAyC;AAC7DC,YAAK;AACDC,kBAAOJ,SAASK,MADf;AAEDC,wBAAa,IAFZ;AAGDC,0BAAe;AAHd,SADwD;AAM7DC,gBAAS;AACLJ,kBAAOJ,SAASS,MADX;AAELC,mBAAO;AAFF,SANoD;AAU7DC,iBAAS;AACLP,kBAAOJ,SAASK,MADX;AAELK,mBAAO;AAFF,SAVoD;AAc7DE,oBAAY;AACRR,kBAAOJ,SAASS,MADR;AAERC,mBAAO;AAFC,SAdiD;AAkB7DG,gBAAQ;AACJT,kBAAOJ,SAASS,MADZ;AAEJC,mBAAO;AAFH,SAlBqD;AAsB7DI,eAAO;AACHV,kBAAOJ,SAASe,OADb;AAEHL,mBAAO;AAFJ,SAtBsD;AA0B7DM,mBAAW;AACPZ,kBAAOJ,SAASS,MADT;AAEPC,mBAAO;AAFA;AA1BkD,KAAzC,EA8BrB;AACCO,sBAAe;AACXC,uBAAY,mBAACC,MAAD,EAAY;AACpB;AACH;AAHU,SADhB;AAMCC,yBAAiB,IANlB;AAOC;AACAC,mBAAW,MARZ;AASCC,mBAAW,KATZ;AAUCC,mBAAW;AAVZ,KA9BqB,CAAxB;;AA4CA,WAAOtB,eAAP;AAEH,CA/CD",
+  "file": "foto_pouptempo.js",
+  "sourceRoot": "../../../../build/models/business/1493477486416",
+  "sourcesContent": [
+    "/**\n * Modulo que faz o controle das Tasks\n */\n\nmodule.exports = (sequelize, DataType) => {\n    const foto_poupotempo = sequelize.define(\"imagem_1493477486416\", {\n        id : {\n            type : DataType.BIGINT,\n            primaryKey : true,\n            autoIncremet : true\n        },\n        titulo : {\n            type : DataType.STRING,\n            field: 'titulo'\n        },\n        idAlbum: {\n            type : DataType.BIGINT,\n            field: 'id_tipo'\n        },\n        tipoImagem: {\n            type : DataType.STRING,\n            field: 'tipo'\n        }, \n        imagem: {\n            type : DataType.STRING,\n            field: 'imagem'\n        },\n        orden: {\n            type : DataType.INTEGER,\n            field: 'orden'\n        },  \n        capaAlbum: {\n            type : DataType.STRING,\n            field: 'principal'\n        },\n    }, {\n        classMethods : {\n            associate : (models) => {\n                // Produto_PoupoTempo.belongsTo(models.Users);\n            }\n        },\n        freezeTableName: true,\n        // define the table's name\n        tableName: 'foto',\n        createdAt: false,\n        updatedAt: false\n    }\n  );\n\n    return foto_poupotempo;\n\n}\n"
+  ]
+}

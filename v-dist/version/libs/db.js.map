@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "sources": [
+    "db.js"
+  ],
+  "names": [
+    "db",
+    "module",
+    "exports",
+    "config",
+    "app",
+    "libs",
+    "connections",
+    "objSequlise",
+    "Object",
+    "keys",
+    "forEach",
+    "keyConfig",
+    "database",
+    "username",
+    "password",
+    "params",
+    "sequelize",
+    "models",
+    "pathModel",
+    "business",
+    "dir",
+    "join",
+    "__dirname",
+    "readdirSync",
+    "modelDir",
+    "file",
+    "model",
+    "import",
+    "name",
+    "key",
+    "associate"
+  ],
+  "mappings": ";;AAAA;;;;AACA;;;;AACA;;;;;;AAEA,IAAIA,KAAK,IAAT;;AAEAC,OAAOC,OAAP,GAAiB,eAAO;AACpB,QAAMC,SAASC,IAAIC,IAAJ,CAASF,MAAT,CAAgBG,WAA/B;;AAEA,QAAI,CAACN,EAAL,EAAS;AACLA,aAAK,EAAL;;AAEA,YAAMO,cAAc,EAApB;AACAC,eAAOC,IAAP,CAAYN,MAAZ,EAAoBO,OAApB,CAA4B,qBAAa;AACrCH,wBAAYI,SAAZ,IAAyB,wBACrBR,OAAOQ,SAAP,EAAkBC,QADG,EAErBT,OAAOQ,SAAP,EAAkBE,QAFG,EAGrBV,OAAOQ,SAAP,EAAkBG,QAHG,EAIrBX,OAAOQ,SAAP,EAAkBI,MAJG,CAAzB;;AAOAf,eAAGW,SAAH,IAAgB;AACZK,2BAAWT,YAAYI,SAAZ,CADC;AAEZM,wBAAQ;AAFI,aAAhB;;AAKA,gBAAIC,YAAYf,OAAOQ,SAAP,EAAkBQ,QAAlC;;AAEA,gBAAMC,MAAM,eAAKC,IAAL,CAAUC,SAAV,8BAA+CJ,SAA/C,CAAZ;;AAEA,yBAAGK,WAAH,CAAeH,GAAf,EAAoBV,OAApB,CAA4B,gBAAQ;AAChC,oBAAMc,WAAW,eAAKH,IAAL,CAAUD,GAAV,EAAeK,IAAf,CAAjB;AACA,oBAAMC,QAAQ1B,GAAGW,SAAH,EAAcK,SAAd,CAAwBW,MAAxB,CAA+BH,QAA/B,CAAd;;AAEAxB,mBAAGW,SAAH,EAAcM,MAAd,CAAqBS,MAAME,IAA3B,IAAmCF,KAAnC;AACH,aALD;;AAOAlB,mBAAOC,IAAP,CAAYT,GAAGW,SAAH,EAAcM,MAA1B,EAAkCP,OAAlC,CAA0C,eAAO;AAC7CV,mBAAGW,SAAH,EAAcM,MAAd,CAAqBY,GAArB,EAA0BC,SAA1B,CAAoC9B,GAAGW,SAAH,EAAcM,MAAlD;AACH,aAFD;AAGH,SA3BD;AA4BH;;AAED,WAAOjB,EAAP;AACH,CAtCD",
+  "file": "db.js",
+  "sourceRoot": "../../build/libs",
+  "sourcesContent": [
+    "import fs from \"fs\";\nimport path from \"path\";\nimport Sequelize from \"sequelize\";\n\nlet db = null;\n\nmodule.exports = app => {\n    const config = app.libs.config.connections\n\n    if (!db) {\n        db = {};\n\n        const objSequlise = {};\n        Object.keys(config).forEach(keyConfig => {\n            objSequlise[keyConfig] = new Sequelize(\n                config[keyConfig].database,\n                config[keyConfig].username,\n                config[keyConfig].password,\n                config[keyConfig].params,    \n            );\n\n            db[keyConfig] = {\n                sequelize: objSequlise[keyConfig],\n                models: {},\n            }\n\n            var pathModel = config[keyConfig].business;\n\n            const dir = path.join(__dirname, `../app/models/business/${pathModel}`);\n\n            fs.readdirSync(dir).forEach(file => {\n                const modelDir = path.join(dir, file);\n                const model = db[keyConfig].sequelize.import(modelDir);\n\n                db[keyConfig].models[model.name] = model;\n            });\n\n            Object.keys(db[keyConfig].models).forEach(key => {\n                db[keyConfig].models[key].associate(db[keyConfig].models);\n            });\n        });\n    }\n\n    return db;\n}\n"
+  ]
+}

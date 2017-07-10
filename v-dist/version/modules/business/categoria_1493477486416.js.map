@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "sources": [
+    "categoria_1493477486416.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "getModel",
+    "tipo",
+    "idBusiness",
+    "app",
+    "modules",
+    "business"
+  ],
+  "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,eAAO;AACpB,WAAO;AACHC,gBADG,oBACMC,IADN,EACYC,UADZ,EACwB;AACvB,oBAAOD,IAAP;AACI,qBAAK,SAAL;AACI,2BAAOE,IAAIA,GAAJ,CAAQC,OAAR,CAAgBC,QAAhB,CAAyB,cAAc,GAAd,GAAoBH,UAA7C,CAAP;AACJ,qBAAK,UAAL;AACA,qBAAK,OAAL;AACI,2BAAOC,IAAIA,GAAJ,CAAQC,OAAR,CAAgBC,QAAhB,CAAyB,oBAAoB,GAApB,GAA0BH,UAAnD,CAAP;AALR;;AAQA,mBAAO,IAAP;AACH;AAXE,KAAP;AAcH,CAfD",
+  "file": "categoria_1493477486416.js",
+  "sourceRoot": "../../../build/modules/business",
+  "sourcesContent": [
+    "module.exports = app => {\n    return {\n        getModel(tipo, idBusiness) {\n            switch(tipo) {\n                case 'produto' :\n                    return app.app.modules.business['categoria' + '_' + idBusiness];\n                case 'conteudo' :\n                case 'album':\n                    return app.app.modules.business['categoria_geral' + '_' + idBusiness];\n            }\n\n            return null;\n        }\n\n    }\n} "
+  ]
+}

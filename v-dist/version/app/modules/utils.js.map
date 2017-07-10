@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "sources": [
+    "utils.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "getModel",
+    "idBusiness",
+    "model",
+    "app",
+    "libs",
+    "db",
+    "models"
+  ],
+  "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,eAAO;AACpB,WAAO;AACHC,kBAAU,kBAACC,UAAD,EAAaC,KAAb;AAAA,mBAAuBC,IAAIC,IAAJ,CAASC,EAAT,CAAYJ,UAAZ,EAAwBK,MAAxB,CAA+BJ,QAAQ,GAAR,GAAcD,UAA7C,CAAvB;AAAA;AADP,KAAP;AAGH,CAJD",
+  "file": "utils.js",
+  "sourceRoot": "../../../build/app/modules",
+  "sourcesContent": [
+    "module.exports = app => {\n    return {\n        getModel: (idBusiness, model) => app.libs.db[idBusiness].models[model + '_' + idBusiness],\n    }\n}"
+  ]
+}

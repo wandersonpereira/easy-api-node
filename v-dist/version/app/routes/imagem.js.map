@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "sources": [
+    "imagem.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "utils",
+    "app",
+    "modules",
+    "route",
+    "all",
+    "auth",
+    "authenticate",
+    "get",
+    "req",
+    "res",
+    "Imagens",
+    "getModel",
+    "params",
+    "empresa",
+    "findAll",
+    "then",
+    "json",
+    "imagens",
+    "catch",
+    "status",
+    "msg",
+    "err",
+    "message",
+    "post",
+    "create",
+    "body",
+    "value",
+    "findOne",
+    "where",
+    "id",
+    "sendStatus",
+    "put",
+    "update",
+    "delete",
+    "destroy"
+  ],
+  "mappings": "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",
+  "file": "imagem.js",
+  "sourceRoot": "../../../build/app/routes",
+  "sourcesContent": [
+    "module.exports = app => {\n\n    const utils = app.app.modules.utils;\n\n    app.route('/imagens/:empresa')\n    .all(app.auth.authenticate())\n\n    .get((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Imagens = utils.getModel(req.params.empresa, 'imagem');\n\n      Imagens.findAll({})\n      .then(imagens => res.json({imagens}))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}));\n    })\n\n    .post((req, res) => {\n      const Imagens = utils.getModel(req.params.empresa, 'imagem');\n\n      Imagens.create(req.body)\n      .then(value => res.json(value))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}));\n    });\n\n    app.route('/imagens/:empresa/:id')\n    .all(app.auth.authenticate())\n\n    .get((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Imagens = utils.getModel(req.params.empresa, 'imagem');\n\n      Imagens.findOne({ where: { id: req.params.id } })\n      .then(value => {\n        value = value === null ? {} : value;\n\n        if (value) return res.json(value);\n\n        //Caso não encontre valor, retorna 404 -> Registro não encontrado\n        return res.sendStatus(404);\n      })\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    })\n\n    .put((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Imagens = utils.getModel(req.params.empresa, 'imagem');\n\n      Imagens.update(req.body, {where: {id: req.params.id}})\n      //Retorna 204 Significa que foi executada com sucesso porém não retornou conteudo com resposta\n      .then(value => res.sendStatus(204))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    })\n\n    .delete((req, res) => {\n      /**Contem o objeto de Tasks, que está na pasta models */\n      const Imagens = utils.getModel(req.params.empresa, 'imagem');\n\n      Imagens.destroy({where: {id: req.params.id}})\n      .then(value => res.sendStatus(204))\n      //Error 412 usado para quando uma dos atributos passados no cabeçalho for considerado com falso\n      //assim impedindo o recurso de ser executado\n      .catch(err => res.status(412).json({msg: err.message}))\n    });\n}\n"
+  ]
+}

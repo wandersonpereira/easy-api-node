@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "config.js"
+  ],
+  "names": [
+    "module",
+    "exports",
+    "connections",
+    "business",
+    "database",
+    "username",
+    "password",
+    "params",
+    "dialect",
+    "host",
+    "omitNull",
+    "difine",
+    "underscored",
+    "connectionSystem",
+    "aplos",
+    "jwtSecret",
+    "jwtSession",
+    "session"
+  ],
+  "mappings": ";;AACAA,OAAOC,OAAP,GAAiB;AACbC,iBAAa;AACT,yBAAiB;AACbC,sBAAU,eADG;AAEbC,sBAAW,YAFE;AAGbC,sBAAW,MAHE;AAIbC,sBAAW,UAJE;AAKbC,oBAAU;AACNC,yBAAU,OADJ;AAENC,sBAAM,cAFA;AAGNC,0BAAU,IAHJ;AAINC,wBAAS;AACLC,iCAAc;AADT;AAJH;AALG;AADR,KADA;AAiBbC,sBAAkB;AACdC,eAAO;AACHV,sBAAW,UADR;AAEHC,sBAAW,UAFR;AAGHC,sBAAW,UAHR;AAIHC,oBAAU;AACNC,yBAAU,UADJ;AAENC,sBAAM,iBAFA;AAGNC,0BAAU,IAHJ;AAINC,wBAAS;AACLC,iCAAc;AADT;AAJH;AAJP;AADO,KAjBL;AAgCbG,eAAW,kBAhCE;AAiCbC,gBAAY,EAACC,SAAS,KAAV;AAjCC,CAAjB",
+  "file": "config.js",
+  "sourceRoot": "../../build/libs",
+  "sourcesContent": [
+    "\nmodule.exports = {\n    connections: {\n        '1493477486416': {\n            business: '1493477486416',\n            database : \"dev_aplos1\",\n            username : \"root\",\n            password : \"nabia123\",\n            params :  {\n                dialect : \"mysql\",\n                host: 'api-v2-mysql',\n                omitNull: true,\n                difine : {\n                    underscored : true\n                }\n            }\n        },\n    },\n    connectionSystem: {\n        aplos: {\n            database : \"postgres\",\n            username : \"postgres\",\n            password : \"nabia123\",\n            params :  {\n                dialect : \"postgres\",\n                host: 'api-v2-postgres',\n                omitNull: true,\n                difine : {\n                    underscored : true\n                }\n            }\n        }\n    },\n    jwtSecret: '%@P10$ApI@7102#%',\n    jwtSession: {session: false},\n}\n"
+  ]
+}
