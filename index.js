@@ -3,6 +3,8 @@ import consign from "consign";
 
 const app = express();
 
+let config = 'config.development.js';
+
 consign()
     .include("libs/config.js")
     .then("libs/sysDb.js")
@@ -13,3 +15,6 @@ consign()
     .then("app/routes")
     .then("libs/boots.js")
     .into(app);
+
+
+module.exports = app;

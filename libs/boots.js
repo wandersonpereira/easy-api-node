@@ -3,6 +3,10 @@ module.exports = app => {
     /**Incia a aplicação na porta informada no middlewares e faz sincronia com o banco*/
     const keysDb = Object.keys(app.libs.db);
 
+    // Não inicia o processo de sincronia com o banco, quando a variável de ambinete for test
+    if (process.env.NODE_ENV === 'test') return;
+
+
     const sync = (ps) => {
         if (!keysDb[ps]) {
             return app.listen(app.get("port"), () => {
