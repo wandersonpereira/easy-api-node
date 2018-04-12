@@ -1,20 +1,16 @@
-import express from "express";
-import consign from "consign";
-
+/** 
+ * Import all models 
+ */
+const express = require('express');
 const app = express();
+const www = require('./.libs/www');
 
-let config = 'config.development.js';
+/**
+ * Load all functions from system
+ */
+function loadSystem() {
+    www(app);
+}
 
-consign()
-    .include("libs/config.js")
-    .then("libs/sysDb.js")
-    .then("libs/db.js")
-    .then("auth.js")
-    .then("libs/middlewares.js")
-    .then("app/modules/")
-    .then("app/routes")
-    .then("libs/boots.js")
-    .into(app);
-
-
+loadSystem();
 module.exports = app;

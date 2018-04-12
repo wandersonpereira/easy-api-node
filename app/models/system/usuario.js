@@ -1,10 +1,10 @@
 /**
  * Modulo que faz o controle das Tasks
  */
-import bcryptjs from 'bcryptjs';
+const bcryptjs = require('bcryptjs');
 
 module.exports = (sequelize, DataType) => {
-    const usuarios_aplos = sequelize.define("usuarios", {
+    const usuarios_aplos = sequelize.define("usuario", {
         id : {
             type : DataType.BIGINT,
             primaryKey : true,
