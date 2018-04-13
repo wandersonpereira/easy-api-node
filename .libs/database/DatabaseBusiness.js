@@ -20,7 +20,7 @@ module.exports = class DatabaseBusiness {
         
         const scanDatabase = (existDir, dir, keyConfig) => {
             if (existDir === false) return;
-        
+
             objSequlise[keyConfig] = new Sequelize(
                 config[keyConfig].database,
                 config[keyConfig].username,
@@ -40,7 +40,7 @@ module.exports = class DatabaseBusiness {
                 _self.db[keyConfig].models[model.name] = model;
             });
         
-            Object.keys(db[keyConfig].models).forEach(key => {
+            Object.keys(_self.db[keyConfig].models).forEach(key => {
                 _self.db[keyConfig].models[key].associate(_self.db[keyConfig].models);
             });
         }
@@ -51,23 +51,30 @@ module.exports = class DatabaseBusiness {
             Object.keys(config).forEach(keyConfig => {
                 var pathModel = config[keyConfig].business;
         
-                const dir = path.join(__dirname, `../app/models/business/${pathModel}`);
-        
-                fs.existsSync(dir, (rs) => { return scanDatabase(rs, dir, keyConfig) });
+                const dir = path.join(__dirname, `../../app/models/business/${pathModel}`);
+                return scanDatabase(true, dir, keyConfig)
             });
         }
         
         return _self;
     }
 
-    getModel(modelName) {
-        //return this.bssDb.getModel([idBusiness].models[model + '_' + idBusiness]);
+    getModel(modelName, params) {
+        params = params || {};
         const _self = this;
-        if (_self.db.modules[modelName] === undefined) {
+        if (params.idBusiness === undefined) {
+            throw new Error(`Uninformed business!`);
+        }
+
+        if (_self.db[params.idBusiness] === undefined) {
+            throw new Error(`Business ${params.idBusiness} not found!`);
+        }
+
+        if (_self.db[params.idBusiness].models[modelName] === undefined) {
             throw new Error(`Module ${modelName} not found!`);
         }
 
-        return _self.db.modules[modelName];
+        return _self.db[params.idBusiness].models[modelName];
     }
 }
 

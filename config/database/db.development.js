@@ -1,19 +1,19 @@
 module.exports = {
     connections: {
-        /*'nome_business': {
-            business: 'nome_business',
-            database : "nome_base_dados",
-            username : "usuario_base_dados",
-            password : "senha_base_dados",
+        'my_business': {
+            business: 'my_business',
+            database : "postgres",
+            username : "postgres",
+            password : "nabia123",
             params :  {
-                dialect : "mysql",
-                host: 'host_base_dados',
+                dialect : "postgres",
+                host: 'api-newv-postgres',
                 omitNull: true,
                 difine : {
                     underscored : true
                 }
             }
-        },*/
+        },
     },
     connectionSystem: {
         system_api: {

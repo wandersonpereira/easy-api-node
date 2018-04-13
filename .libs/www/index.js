@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.db = database;
 
     function init(result) {
-        if (result != true) log.warn(result.message);
+        if (result != undefined && result != true) log.warn(result.message || '');
 
         /** 
          * Add injects in var app

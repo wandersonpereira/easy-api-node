@@ -1,5 +1,5 @@
 module.exports = app => {
-    const Usuario = app.db.getSYSModel('churrasco');
+    const Usuario = app.db.getSYSModel('usuario');
 
     app.get("/", (req, res) => {
         Usuario.find({}).then(rs => {

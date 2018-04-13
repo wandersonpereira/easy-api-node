@@ -18,7 +18,6 @@ module.exports = class Database {
     /** Get a model from system */
     getBSSModel(modelName, params) {        
         return this.bssDb.getModel(modelName, params);
-//        return this.bssDb.getModel([idBusiness].models[model + '_' + idBusiness]);
     }
 
     getSYSModel(modelName, params) {

@@ -1,5 +1,5 @@
 /**
- * Modulo que faz o controle das Tasks
+ * Model that do user controller
  */
 const bcryptjs = require('bcryptjs');
 
